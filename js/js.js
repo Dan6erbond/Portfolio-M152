@@ -19,7 +19,7 @@ $(window).on('scroll', function(){
   var scrollPercent = (s / (d - c)) * 100;
 
   $("#progress-bar").css({width: `${scrollPercent}%`});
-  console.log(scrollPercent);
+  //console.log(scrollPercent);
 })
 
 function copyToClipboard(str){
