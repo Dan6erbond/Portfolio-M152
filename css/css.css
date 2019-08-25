@@ -1,0 +1,126 @@
+.card {
+  height: 95%;
+}
+
+.jumbotron {
+  background-image: url("/img/web.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron-heading {
+  color: white;
+  font-weight: 400;
+}
+
+.text-muted {
+  color: rgb(235, 235, 235) !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 55px 0 60px 0;
+  background-color: #f8f9fa;
+}
+
+main {
+  padding: 0 20px 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: width .5s;
+  transition: margin .5s;
+}
+
+:target::before {
+  display: block;
+  content: " ";
+  margin-top: -70px;
+  height: 70px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+h1 a, h2 a, h3 a, h4 a, pre a {
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  position: absolute;
+  cursor: pointer;
+}
+
+h1:hover a, h2:hover a, h3:hover a, h4:hover a, pre div:hover a, pre.python:hover a {
+  opacity: 1;
+  text-decoration: none;
+}
+
+h1 a {
+  font-size: 18px;
+  padding-top: 13px;
+}
+
+h2 a {
+  font-size: 16px;
+  padding-top: 11px;
+}
+
+.index {
+  position: fixed;
+  background-color: rgb(235, 235, 235);
+  width: 300px;
+  left: 0;
+  height: 100%;
+  top: 60px;
+  bottom: 60px;
+  overflow: hidden;
+  padding: 10px 0 0 15px;
+}
+
+.wiki .content {
+  margin-left: 15px;
+}
+
+.copyText {
+  position: fixed;
+  bottom: -50px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(235, 235, 235);
+  transition: bottom 0.25s;
+}
+
+.copyText.active {
+  bottom: 0;
+}
+
+@media only screen and (max-width: 1800px) {
+  main.wiki {
+    margin-left: 300px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  main.wiki {
+    margin: 0;
+  }
+
+  .index {
+    background-color: rgb(246, 246, 246);
+    position: relative;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    border: 1px solid black;
+  }
+}

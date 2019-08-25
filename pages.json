@@ -1,0 +1,22 @@
+[
+    {
+        "key": "M152 | Bootstrap",
+        "description": "Bootstrap ist eine CSS Bibliothek mit welcher man responsiv Webseiten erstellen kann.",
+        "url": "./bootstrap.html"
+    },
+    {
+        "key": "M152 | HTML5",
+        "description": "Hypertext Markup Language ist eine Auszeichnungssprache \u00e4hnlich zu XML mit welcher elektronische Dokumente strukturiert werden k\u00f6nnen.",
+        "url": "./html.html"
+    },
+    {
+        "key": "Multimedia-Inhalte in Webauftritte integrieren",
+        "description": "Portfolio Webseite zum erlerntem Wissen aus dem Modul 152",
+        "url": "./index.html"
+    },
+    {
+        "key": "M152 | jQuery",
+        "description": "jQuery ist eine JavaScript Bibliothek welche das steuern von HTML DOM Elementen sowie AJAX Anfragen und Events erleichtert.",
+        "url": "./jquery.html"
+    }
+]
