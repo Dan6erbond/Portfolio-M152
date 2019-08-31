@@ -32,17 +32,19 @@
       <div class="row">
         <div class="col-8" style="max-width: 100%;flex: 1;">
           <p>
-            <b>Hypertext Markup Language</b> ist eine Auszeichnungssprache ähnlich zu XML mit welcher elektronische Dokumente strukturiert werden können.
-            HTML Dokumente können von Webbrowser dargestellt werden und neben dem vom Browser angezeigten Inhalte Meta-Informationen enthalten.
+            <b>Bootstrap</b> ist ein Open-Source Framework welches das Gestalten von HTML-Seiten erleichert.
+            Es enthält HTML und CSS basierte Gestaltungsvorlagen sowie JavaScript Erweiterungen.
             <br>
             <br>
-            Die aktuellste Version von HTML ist HTML5.2 die bereits von vielen Browsern sowie Layout-Engines unterstützt ist.
-            XHTML wird bereits von HTML5 ersetzt.
-            Die visuelle Formatierung wird durch den Webbrowser sowie CSS Gestaltungsvorlagen bestimmt.
+            Bootstrap ist auch sehr weit verbreitet und wird sogar von NASA und MSNBC eingesetzt.
+            Neben dem Core-Framework können auch Vorlagen heruntergeladen werden womit Seiten erstellt werden können.
           </p>
           <div class="index">
             <h2>Inhaltsverzeichnis</h2>
             <ol>
+              <li>
+                <a href="#einrichtung">Einrichtung</a>
+              </li>
               <li>
                 <a href="#grid">Grid-System</a>
               </li>
@@ -69,11 +71,95 @@
     </div>
     <br>
     <div class="content">
-      <h2 id="grid">Grid-System<a onclick="copyToClipboard(this.href);" href="#grid">🔗</a></h2>
-      <p></p>
+      <h2 id="einrichtung">Einrichtung<a onclick="copyToClipboard(this.href);" href="#einrichtung">🔗</a></h2>
+      <p>
+        Nachdem man die ZIP-Datei mit dem Bootstrap CSS und Js Framework heruntergeladen hat, muss man eine Struktur aufbauen welche von Bootstrap Templates erkannt wird, sowie Ordnung im Projekt beibehaltet.
+        <br>
+        <br>
+        Die Bootstrap ZIP-Datei kann <a href="https://getbootstrap.com/docs/4.3/getting-started/download/">hier</a> gefunden werden.
+        <br>
+        <br>
+        Die Ordnerstruktur muss nun folgendermassen aufgebaut werden:
+      </p>
+      <pre>
+root
+  |- docs
+       |- 4.3
+           |- dist
+                |- css
+                |- js</pre>
       <br>
+      <p>
+        Im <code>root/docs/4.3/dist/css</code> Ordner werden alle CSS-Dateien abgelegt wie <code>bootstrap-grid.min.css</code> <code>bootstrap.min.css</code>. Im <code>root/docs/4.3/dist/js</code> Ordner die JavaSkript Dateien inklusive <code>bootstrap.min.js</code>.
+        <br>
+        <br>
+        Für selbstgeschriebenen CSS und Js Code ist es empfehlenswert die Dateien unter einem separaten Ordner bspw. <code>root/css</code> für CSS Dateien und <code>root/js</code> für JavaSkript dateien abzulegen.
+      </p>
+      <h2 id="grid">Grid-System<a onclick="copyToClipboard(this.href);" href="#grid">🔗</a></h2>
+      <p>
+        Eines der wichtigsten Elemente von Bootstrap ist das Grid-System.
+        Es erlaubt, Elemente freier anzuordnen, ohne Beschränkungen wie bspw. bei einer Tabelle und skaliert deutlich besser als solches.
+        Die volle Dokumentation dafür ist <a href="https://getbootstrap.com/docs/4.3/layout/grid/">hier</a> zu finden.
+        <br>
+        <br>
+        Grundsätzlich ist ein Grid von Bootstrap wie eine Tabelle aufgebaut. Man hat die Tabelle - den <code>container</code> und jeweils Reihen welche der Klasse <code>row</code> zugeordnet sind.
+        Kinderelemente in den Reihen haben auch Klassen, diese nennen sich <code>columns</code>, dafür gibt es viele Varianten.
+        Ein paar Beispiele sind:
+        <ul>
+          <li>
+            <code>col-sm</code>
+          </li>
+          <li>
+            <code>col-md</code>
+          </li>
+          <li>
+            <code>col-lg</code>
+          </li>
+        </ul>
+        Mit <code>-sm</code>, <code>-md</code> und <code>-lg</code> limitiert man die Maximalgrösse eines Elements auf 540px, 720px oder 960px.
+        <br>
+        <br>
+        Neben diesen kann man auch die relative Grösse Angaben.
+        Die relative Grösse spezifiziert, wie gross das Element in der Tabelle ist, welche bis zu 12 "units" breit sein kann.
+        Wenn man möchte, dass sich ein Element automatisch anpasst, benutzt man <code>-auto</code> ansonsten eine Zahl wie z.B. <code>-8</code>.
+        <br>
+        <br>
+        Ein einfaches Grid kann so aufgebaut sein:
+      </p>
+      <div class="preview">
+        <div class="container">
+          <div class="row">
+            <div class="col-8">Das ist ein Text.</div>
+            <div class="col-4">Das ist ein Text.</div>
+          </div>
+          <div class="row">
+            <div class="col-4">Das ist ein Text.</div>
+            <div class="col-8">Das ist ein Text.</div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <p>Der Code dafür sieht so aus:</p>
+      <pre>
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-8">Das ist ein Text.&lt;/div&gt;
+    &lt;div class="col-4">Das ist ein Text.&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-4">Das ist ein Text.&lt;/div&gt;
+    &lt;div class="col-8">Das ist ein Text.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
       <h2 id="vorlagen">Vorlagen<a onclick="copyToClipboard(this.href);" href="#vorlagen">🔗</a></h2>
-      <p></p>
+      <p>
+        Falls man die Seite nicht von Grund auf bauen möchte, offeriert Bootstrap auf der <a href="https://getbootstrap.com/docs/4.3/examples/">Beispiel-Seite</a> verschiedene Vorlagen womit man schnell eine Seite bauen kann.
+        Es ist empfehlenswert den Source-Code dieser Vorlagen genauer anzuschauen um Bootstrap besser zu verstehen und auch komponenten wie Navbars und Footers besser einzusetzen.
+        <br>
+        <br>
+        Diese Seite setzt das Album Template sowie eines der Navbars ein.
+      </p>
+      <br>
     </div>
   </main>
 
