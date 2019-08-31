@@ -31,8 +31,7 @@ main {
   padding: 0 20px 0 20px;
   max-width: 1200px;
   margin: 0 auto;
-  transition: width .5s;
-  transition: margin .5s;
+  transition: width .5s, margin .5s;
 }
 
 :target::before {
@@ -70,6 +69,11 @@ h2 a {
   padding-top: 11px;
 }
 
+h3 a {
+  font-size: 14px;
+  padding-top: 9px;
+}
+
 .index {
   position: fixed;
   background-color: rgb(235, 235, 235);
@@ -101,6 +105,30 @@ h2 a {
 
 .copyText.active {
   bottom: 0;
+}
+
+pre {
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.preview {
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 0.4);
+}
+
+.preview p {
+  margin: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .wiki .card {
+    margin-top: 25px;
+  }
 }
 
 @media only screen and (max-width: 1800px) {

@@ -30,7 +30,7 @@
     <h1 style="margin-left: 15px;">HTML<a onclick="copyToClipboard(this.href);" href="#">🔗</a></h1>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-8">
+        <div class="col-8" style="max-width: 100%;flex: 1;">
           <p>
             <b>Hypertext Markup Language</b> ist eine Auszeichnungssprache ähnlich zu XML mit welcher elektronische Dokumente strukturiert werden können.
             HTML Dokumente können von Webbrowser dargestellt werden und neben dem vom Browser angezeigten Inhalte Meta-Informationen enthalten.
@@ -52,7 +52,7 @@
             </ol>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-4" style="min-width: 250px;">
           <div class="card">
             <div class="card-img-top" style="text-align: center;padding: 15px;">
               <img src="img/html.png" alt="Card image cap" style="height: 150px;width: auto;">
@@ -67,48 +67,71 @@
         </div>
       </div>
     </div>
+    <br>
     <div class="content">
       <h2 id="tags">Tags<a onclick="copyToClipboard(this.href);" href="#tags">🔗</a></h2>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
+      <p>
+        Mit Hilfe von Tags werden in HTML Seiten Elemente deklariert.
+        Die wichtigsten Tags sind <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>.
+        <br>
+        <br>
+        Die meisten Tags haben einen Begin-Tag und einen End-Tag (Ausnahmen wie <code>&lt;img&gt;</code>).
+        Zwischen den beiden Hälften kommt der eigentliche (meist sichtbare) Inhalt welcher der Browser darstellen soll. Beispiel:
+      </p>
+      <pre>&lt;p&gt;Das ist ein Text.&lt;/p&gt;</pre>
+      <p>Wird wie folgt dargestellt:</p>
+      <div class="preview">
+        <p>Das ist ein Text.</p>
+      </div>
       <br>
+      <h3 id="attr">Attributen<a onclick="copyToClipboard(this.href);" href="#attr">🔗</a></h3>
+      <p>
+        Alle Tags unterstützen <i>Attribute</i> mit welchen das Element angepasst werden kann.
+        Als Beispiel kann man für den <code>&lt;a&gt;</code> das <code>href</code> Attribut definieren welches auf eine URL hinweist die per Klick erreicht werden kann.
+        Die Syntax dafür:
+      </p>
+      <pre>&lt;a href="https://dan6erbond.github.io"&gt;Das ist ein Link.&lt;/a&gt;</pre>
+      <p>Wird vom Browser wie folgt angezeigt:</p>
+      <div class="preview">
+        <a href="https://dan6erbond.github.io">Das ist ein Link.</a>
+      </div>
+      <br>
+      <p>
+        Eines der wichtigsten Attributen sind die <code>class</code> sowie <code>id</code> Attributen.
+        Mit IDs können einzelne Elemente adressiert werden (in jQuery und CSS) und konventionellerweise benutzt man Klassen für mehrere Elemente welche ähnlich handeln/aussehen sollten.
+      </p>
       <h2 id="css">CSS3<a onclick="copyToClipboard(this.href);" href="#css">🔗</a></h2>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
-      <p>bla bla bla bla bla bla bla</p>
+      <p>
+        CSS ist die Sprache womit man umgänglich HTML DOM Elemente gestaltet.
+        Mit CSS können auch SVG Pfade innerhalb eines HTML Dokument (oder auch ausserhalb) gestaltet werden.
+        Wenn man ohne CSS nur ein Text erstellt, sieht der Code so aus:
+      </p>
+      <pre>&lt;p&gt;Dast ist ein Text.&lt;/p&gt;</pre>
+      <p>Sieht dann so aus:</p>
+      <div class="preview">
+        <p>Das ist ein Text.</p>
+      </div>
+      <p>Mit CSS:</p>
+      <pre>&lt;style&gt;
+  #text {
+    color: green;
+    font-size: 20px;
+    text-decoration: underline;
+  }
+&lt;/style&gt;
+
+&lt;p id="text"&gt;Das ist ein Text.&lt;/p&gt;</pre>
+      <div class="preview">
+        <style media="screen">
+          #text {
+            color: green;
+            font-size: 20px;
+            text-decoration: underline;
+          }
+        </style>
+        
+        <p id="text">Das ist ein Text.</p>
+      </div>
     </div>
   </main>
 
