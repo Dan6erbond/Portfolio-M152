@@ -70,14 +70,122 @@
     <br>
     <div class="content">
       <h2 id="events">Events<a onclick="copyToClipboard(this.href);" href="#events">🔗</a></h2>
-      <p></p>
+      <p>
+        Mit Events können bestimmte Vorgänge (bspw. Maus-Klick) an eine Funktion gebunden werden.
+        Sobald dieses Event ausgelöst wird, wird die gebundene Funktion aufgerufen falls eine vorhanden ist was bspw. Hover-Effekte ermöglicht.
+        Als Beispiel wird hier bei Hover die Farbe des Containers verändert, sowie angezeigt wo sich die Maus im lokalen Koordinatensystem befindet:
+      </p>
+      <style media="screen">
+        #hover-container {
+          width: 300px;
+          height: 200px;
+          background-color: orange;
+          color: white;
+          font-size: 20px;
+          padding-top: 10px;
+          padding-left: 15px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+          border: solid 5px white;
+        }
+      </style>
+      <div id="hover-container">
+
+      </div>
+      <script type="text/javascript">
+        var orgColor = $("#hover-container").css("background-color");
+        $("#hover-container").hover(function() {
+          $(this).css({
+            "background-color": "green"
+          });
+        }, function() {
+          $(this).css({
+            "background-color": orgColor
+          });
+        });
+        $(document).mousemove(function(e) {
+          var elm = $("#hover-container");
+          var elmBeginX = $(elm).offset().left;
+          var elmEndX = elmBeginX + $(elm).width();
+          var elmBeginY = $(elm).offset().top;
+          var elmEndY = elmBeginY + $(elm).height();
+          if (e.pageX > elmBeginX && e.pageX < elmEndX && e.pageY > elmBeginY && e.pageY < elmEndY) {
+            $(elm).text(`X: ${e.pageX - elmBeginX} | Y: ${e.pageY - elmBeginY}`);
+          } else {
+            $(elm).text("");
+          }
+        });
+      </script>
       <br>
+      <p>Der Code der dafür eingesetzt wurde:</p>
+      <pre>
+&lt;script type="text/javascript"&gt;
+  var orgColor = $("#hover-container").css("background-color");
+  $("#hover-container").hover(function(){
+    $(this).css({"background-color": "green"});
+  }, function(){
+    $(this).css({"background-color": "orange"});
+  });
+  $(document).mousemove(function(e){
+    var elm = $("#hover-container");
+    var elmBeginX = $(elm).offset().left;
+    var elmEndX = elmBeginX + $(elm).width();
+    var elmBeginY = $(elm).offset().top;
+    var elmEndY = elmBeginY + $(elm).height();
+    if (e.pageX > elmBeginX && e.pageX < elmEndX && e.pageY > elmBeginY && e.pageY < elmEndY){
+      $(elm).text(`X: ${e.pageX - elmBeginX} | Y: ${e.pageY - elmBeginY}`);
+    } else {
+      $(elm).text("");
+    }
+  });
+&lt;/script&gt;</pre>
+      <p>
+        Die erste Funktion für das <code>hover()</code>-Event wird ausgeführt sobald die Maus über das Element bewegt wird.
+        <br>
+        <br>
+        Nun verändert das die Farbe das Elements auf grün, wir möchten aber auch dass die Farbe danach auf Orange zurückgeht, dafür müssen wir eine zweite Funktion bauen welche beim "verschwinden" der Maus die Farbe zurücksetzt.
+        Damit wir dynamisch die original Farbe kennen, lesen wir diese zuerst in der ersten Zeile und speichern sie in einer Variable ab.
+        <br>
+        <br>
+        Damit wir bei Verschiebung des Cursors eine Funktion aufrufen können benutzen wir den <code>mouseover()</code>-Event.
+        Wir berechnen die lokale Position aus, und falls sich die Maus innerhalb des Elements befindet, zeigen wir die Position an.
+        Ansonsten wird der Text welcher momentan sich im Element befindet gelöscht.
+      </p>
       <h2 id="dom">DOM Elemente steuern<a onclick="copyToClipboard(this.href);" href="#dom">🔗</a></h2>
-      <p></p>
+      <p>
+        Wie im oberen Abschnitt bereits demonstriert, kann man die Farbe von Elementen, den Text und vieles mehr verändern.
+        In jQuery gibt es sogenannte "Selectors".
+        Mit diesen wird ein Element bzw. Elemente adressiert und danach können mit verschiedenen Methoden Attribute sowie andere Eigenschaften des Elements verändert oder gelesen werden.
+        Die wichtigsten davon sind:
+        <ul>
+          <li>
+            <code>css()</code>: Hiermit können CSS Eigenschaften gesetzt werden um Elemente zu färben.
+            Als Argument ist ein JavaScript-Objekt benötigt, wenn man eine bestimmte Eigenschaft lesen möchte, gibt man den Namen der Eigenschaft mit.
+          </li>
+          <li>
+            <code>text()</code>: Wenn man die Methode ohne Argumente ausführt, erhält man den Text im Element zurück (ähnlich wie mit <code>html()</code> aber ohne Kinder-Elemente).
+            Man kann auch Strings mitgeben um den Text zu manipulieren.
+          </li>
+          <li>
+            <code>offset()</code>: Diese Methode gibt uns ein JavaScript-Objekt zurück welches die <code>top</code> und <code>left</code> Attribute enthält und angibt wie weit von der oberen sowie linken Seite des Fensters sich das Element befindet.
+            Wenn man eine JavaScript-Objekt mit einem oder den beiden Eigenschaften der Methode gibt, werden diese neu gesetzt.
+            Somit können Elemente verschoben werden.
+          </li>
+        </ul>
+      </p>
       <br>
       <h2 id="ajax">AJAX Anfragen<a onclick="copyToClipboard(this.href);" href="#ajax">🔗</a></h2>
-      <p></p>
-      <br>
+      <p>
+        jQuery macht es mit Hilfe von AJAX Anfragen sehr einfach, Text von externen Quellen zu lesen.
+        Dafür braucht man diesen Grund-Code:
+      </p>
+      <pre>
+$.get(URL, function(data, status){
+  alert(data);
+});</pre>
+      <p>
+        Mit ähnlicher Syntax können Daten per POST Request auch geschrieben werden.
+        Mehr dazu kann man auf <a href="https://www.w3schools.com/jquery/jquery_ajax_get_post.asp">W3Schools</a> nachlesen.
+      </p>
     </div>
   </main>
 
